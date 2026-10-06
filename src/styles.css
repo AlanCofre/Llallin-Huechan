@@ -6,7 +6,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   --ink: #211f1b;
-  --paper: #f8f7f3;
+  --paper: #211f1b;
   --white: #fffefa;
   --oxide: #a34732;
   --muted: #706c64;
@@ -104,39 +104,28 @@ img {
   color: var(--ink);
 }
 
-.brand__mark {
+.brand__logo-frame {
   position: relative;
-  display: grid;
-  width: 35px;
-  height: 35px;
-  flex: 0 0 35px;
-  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-  transform: rotate(45deg) scale(0.78);
+  display: block;
+  width: 142px;
+  height: 30px;
+  flex: 0 0 142px;
+  overflow: hidden;
 }
 
-.brand__mark i {
-  border: 1.5px solid currentColor;
+.brand__logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 91%;
 }
 
-.brand__mark i:nth-child(2),
-.brand__mark i:nth-child(3) {
-  background: currentColor;
-}
-
-.brand__wordmark {
-  display: grid;
-  gap: 1px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.05;
-}
-
-.brand__wordmark span:last-child {
-  color: var(--oxide);
-}
-
-.brand--compact .brand__mark {
-  display: none;
+.brand--compact .brand__logo-frame {
+  width: 120px;
+  flex-basis: 120px;
 }
 
 .menu-toggle {
@@ -860,10 +849,6 @@ img {
   color: var(--white);
 }
 
-.brand--light .brand__wordmark span:last-child {
-  color: #d79b81;
-}
-
 .site-footer nav {
   display: flex;
   flex-wrap: wrap;
@@ -988,14 +973,10 @@ img {
     min-height: 68px;
   }
 
-  .brand__mark {
-    width: 30px;
-    height: 30px;
-    flex-basis: 30px;
-  }
-
-  .brand__wordmark {
-    font-size: 11px;
+  .brand__logo-frame {
+    width: 128px;
+    height: 27px;
+    flex-basis: 128px;
   }
 
   .menu-toggle {
