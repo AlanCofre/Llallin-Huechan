@@ -8,7 +8,7 @@ export default function Brand({ compact = false, light = false }) {
       <span className="brand__logo-frame" aria-hidden="true">
         <img
           className="brand__logo"
-          src="/images/Logo%20Llalin%20PNG-02%20(2)%20(1)%20-%20lidia%20huechan%20cavieres.png"
+          src="/images/logo-navbar.png"
           alt=""
         />
       </span>

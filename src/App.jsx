@@ -15,9 +15,9 @@ function App() {
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <div className="hero__copy">
             <p className="eyebrow">Curarrehue · Reigolil · Chile</p>
-            <h1 id="hero-title">Tramas que nacen del territorio.</h1>
+            <h1 id="hero-title">Cestería en diálogo con el territorio.</h1>
             <p className="hero__lead">
-              Tejido y cestería en diálogo con la identidad Mapuche y el trabajo hecho a mano.
+              Artesanía cestera vinculada a la identidad Mapuche y al territorio de Curarrehue y Reigolil.
             </p>
             <a className="button button--light" href="#artesania">
               Explorar la artesanía <ArrowDownRight size={17} aria-hidden="true" />
@@ -32,7 +32,7 @@ function App() {
               fetchPriority="high"
             />
             <div className="hero__image-caption">
-              <span>Un territorio, muchas tramas</span>
+              <span>Cestería y territorio</span>
               <span>01 / 04</span>
             </div>
           </div>
@@ -42,17 +42,16 @@ function App() {
         <section className="identity section-shell" id="identidad" aria-labelledby="identity-title">
           <div className="identity__intro">
             <p className="eyebrow">01 — Nuestra identidad</p>
-            <h2 id="identity-title">Un entramado de saberes, creación y lugar.</h2>
+            <h2 id="identity-title">Una identidad vinculada al lugar.</h2>
           </div>
           <div className="identity__body">
             <p>
-              Llallin Huechan reúne el lenguaje del tejido y la cestería con una identidad
-              vinculada a la cultura Mapuche y al territorio de Curarrehue y Reigolil.
+              Llallin Huechan presenta trabajos de cestería con una identidad vinculada a la
+              cultura Mapuche y al territorio de Curarrehue y Reigolil.
             </p>
             <p>
-              La figura de la araña tejedora —Llallin / Llallin Kuze— inspira una mirada sobre
-              el entramado, el telar y las formas de la cordillera. Una invitación a valorar la
-              creación manual desde su propio contexto.
+              La figura de la araña —Llallin / Llallin Kuze— forma parte de esta identidad.
+              La creación manual se comparte desde su propio contexto cultural y territorial.
             </p>
             <a className="text-link" href="#territorio">
               Conocer el territorio <ArrowUpRight size={16} aria-hidden="true" />
@@ -68,9 +67,9 @@ function App() {
 
         <section className="craft section-shell" id="artesania" aria-labelledby="craft-title">
           <div className="craft__heading">
-            <SectionHeading eyebrow="02 — Artesanía" title="Hecho a mano, con identidad.">
+            <SectionHeading eyebrow="02 — Artesanía" title="Cestería con identidad.">
               <p>
-                Una primera mirada a los trabajos de Llallin Huechan. Las imágenes y textos son
+                Una primera mirada a la cestería de Llallin Huechan. La imagen y el texto son
                 referenciales y están preparados para reemplazarse por contenido propio.
               </p>
             </SectionHeading>
@@ -78,7 +77,7 @@ function App() {
               Consultar <ArrowUpRight size={16} aria-hidden="true" />
             </a>
           </div>
-          <div className="work-grid">
+          <div className={`work-grid${works.length === 1 ? ' work-grid--single' : ''}`}>
             {works.map((work, index) => (
               <WorkCard key={work.title} work={work} index={index} />
             ))}
@@ -117,16 +116,25 @@ function App() {
 
         <section className="gallery-section section-shell" id="galeria" aria-labelledby="gallery-title">
           <SectionHeading eyebrow="04 — Galería" title="Una mirada en proceso.">
-            <p>Espacios listos para fotografías de textiles, cestería, procesos y territorio.</p>
+            <p>Espacios listos para fotografías de cestería, procesos y territorio.</p>
           </SectionHeading>
           <div className="gallery-grid">
             {gallery.map((item, index) => (
               <figure className={`gallery-tile gallery-tile--${item.tone}`} key={item.title}>
-                <div className="gallery-tile__art" role="img" aria-label={`Fotografía pendiente: ${item.title}`}>
-                  <span className="gallery-tile__code">LH / 0{index + 1}</span>
-                  <span className="gallery-tile__placeholder">Fotografía<br />por agregar</span>
-                  <span className="gallery-tile__shape" aria-hidden="true" />
-                </div>
+                {item.image ? (
+                  <img
+                    className="gallery-tile__art gallery-tile__photo"
+                    src={item.image}
+                    alt={item.imageAlt}
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="gallery-tile__art" role="img" aria-label={`Fotografía pendiente: ${item.title}`}>
+                    <span className="gallery-tile__code">LH / 0{index + 1}</span>
+                    <span className="gallery-tile__placeholder">Fotografía<br />por agregar</span>
+                    <span className="gallery-tile__shape" aria-hidden="true" />
+                  </div>
+                )}
                 <figcaption>
                   <span>{item.title}</span>
                   <span>Imagen pendiente</span>
@@ -174,7 +182,7 @@ function App() {
         <div className="site-footer__bottom">
           <span>© {new Date().getFullYear()} Llallin Huechan</span>
           <span>Curarrehue · Reigolil · Chile</span>
-          <span>Identidad, tejido y territorio</span>
+          <span>Identidad, cestería y territorio</span>
         </div>
       </footer>
     </>

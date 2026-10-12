@@ -6,28 +6,23 @@ export const navigation = [
   { label: 'Contacto', href: '#contacto' },
 ];
 
+const basketryPhoto = '/images/20260821_201055%20-%20lidia%20huechan%20cavieres.jpg';
+const basketryPhotoAlt = 'Canasto de cestería con asa y detalle decorativo central.';
+
 export const works = [
   {
-    title: 'Textil',
-    description: 'Espacio para presentar una pieza y su historia.',
-    tone: 'textil',
-  },
-  {
     title: 'Cestería',
-    description: 'Espacio para compartir trabajos de cestería.',
+    description: 'Espacio para presentar trabajos de cestería.',
     tone: 'cesteria',
-  },
-  {
-    title: 'Proceso',
-    description: 'Espacio para mostrar el proceso de trabajo hecho a mano.',
-    tone: 'proceso',
+    image: basketryPhoto,
+    imageAlt: basketryPhotoAlt,
   },
 ];
 
 export const gallery = [
-  { title: 'Textiles', tone: 'textil' },
-  { title: 'Cestería', tone: 'cesteria' },
-  { title: 'Proceso', tone: 'proceso' },
+  { title: 'Cestería', tone: 'cesteria', image: basketryPhoto, imageAlt: basketryPhotoAlt },
+  { title: 'Detalle', tone: 'cesteria' },
+  { title: 'Proceso cestero', tone: 'proceso' },
   { title: 'Territorio', tone: 'territorio' },
 ];
 
