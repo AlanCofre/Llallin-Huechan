@@ -15,7 +15,7 @@ function App() {
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <div className="hero__copy">
             <p className="eyebrow">Curarrehue · Reigolil · Chile</p>
-            <h1 id="hero-title">Cestería en diálogo con el territorio.</h1>
+            <h1 id="hero-title">Cestería que teje el paisaje.</h1>
             <p className="hero__lead">
               Artesanía cestera vinculada a la identidad Mapuche y al territorio de Curarrehue y Reigolil.
             </p>
