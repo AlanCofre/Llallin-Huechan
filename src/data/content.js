@@ -1,8 +1,10 @@
 export const navigation = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Nuestra identidad', href: '#identidad' },
+  { label: 'La pita', href: '#pita' },
   { label: 'Artesanía', href: '#artesania' },
   { label: 'Galería', href: '#galeria' },
+  { label: 'Cuidados', href: '#cuidados' },
   { label: 'Contacto', href: '#contacto' },
 ];
 
